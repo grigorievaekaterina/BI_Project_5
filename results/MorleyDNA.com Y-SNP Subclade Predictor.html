@@ -1,0 +1,293 @@
+<html>
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>MorleyDNA.com Y-SNP Subclade Predictor and experimental phylogeny</title>
+<meta name="description" content="Y-DNA SNP-based subclade predictor. Determine where your Genographic 2.0 or Full-Y result fits on the most extensive human Y phylogeny. Uncover novel SNPs.">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<link rel="stylesheet" type="text/css" href="layout.css">
+
+<script  nonce='562ab4f299418947095401cfeabc3fcf84f56550523d50b1e04dcfa1f1d51e570aadf7203d503a84c63e89fb49f437f10c36142ff5d22ea92888ac3cb4080cb7' >
+	
+	var _paq;
+/*	
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42516334-1', 'morleydna.com');
+  ga('send', 'pageview');
+*/
+</script><script src='https://www.google.com/recaptcha/api.js' async defer  nonce='562ab4f299418947095401cfeabc3fcf84f56550523d50b1e04dcfa1f1d51e570aadf7203d503a84c63e89fb49f437f10c36142ff5d22ea92888ac3cb4080cb7'  ></script><script  nonce='562ab4f299418947095401cfeabc3fcf84f56550523d50b1e04dcfa1f1d51e570aadf7203d503a84c63e89fb49f437f10c36142ff5d22ea92888ac3cb4080cb7' >
+
+function submitClick(e) {
+if(!document.getElementById("get-consent-check").checked) {
+    alert("In order to proceed with the analysis, you need to tick the consent checkbox.");
+    e.preventDefault();
+    e.stopPropagation();
+    return false; //don't submit the form
+}
+_paq.push(["trackEvent", "predict", "click"]);
+return true;
+}//end submitClick
+
+function onSubmitInvis(tok) {
+    _paq.push(['trackEvent', 'predict', 'invisibleCaptchaPass']);
+    document.getElementById("dataEntryForm").submit();
+}
+
+function captchaPass(val) {
+if(typeof _paq != 'undefined' && typeof _paq != 'null') {
+_paq.push(['trackEvent', 'predict', 'captchaPass']);
+}
+}
+
+function captchaExpire() {
+    if(typeof _paq != 'undefined' && typeof _paq != 'null') {
+_paq.push(['trackEvent', 'predict', 'captchaExpire']);
+}
+}
+
+function changeFormat() {
+	_paq.push(['trackEvent', 'changeFormat', 'click']);
+}
+
+function changeTree() {
+	_paq.push(['trackEvent', 'changeTree', 'click']);
+}
+
+function changeBird() {
+	_paq.push(['trackEvent', 'changeBird', 'click']);
+}
+
+window.onerror = function(errorMsg, url, line, column, errorObject) {
+var _paq = _paq || [];
+_paq.push(['trackEvent', 'predict', 'error', errorMsg]);
+return false;
+}//end onerror
+</script>
+</head>
+<body>
+<div  id="page-content">
+<main>
+<h1>MorleyDNA.com Y-SNP Subclade Predictor (beta)</h1>
+
+
+
+<h2>What's my terminal SNP?</h2>
+
+<noscript><div style='background-color: orange;font-weight: bold;';>The MorleyDNA.com Y-SNP Subclade Predictor requires Javascript!</div></noscript>
+<form action = "predict" method="post" id="dataEntryForm" >
+
+Enter a list of SNP calls, in one of the two <a href = "#Formats">supported formats</a> (or try the <a href="extractFromAutosomal" id="brandNewTool" >brand-new tool</a> for extracting Y-DNA from autosomal tests):<BR>
+
+
+<!-- https://code.google.com/p/chromium/issues/detail?id=109587-->
+<textarea name="rawData" rows = 12 cols = 160  style="font-size:8pt; important;" id="rawData" spellcheck="false" autocomplete="off"></textarea><br>
+<table ><tr><td style="vertical-align:top">
+<fieldset class='inline'>
+<legend>Data format</legend>
+<input type="radio" name = "dataFormat" class="changeFormatRadio" value="FTDNAgeno"  checked>FTDNA format (transferred Geno 2.0 results)<BR>
+<input type="radio" name = "dataFormat" class="changeFormatRadio" value="FTDNA" >FTDNA format<BR>
+<input type="radio" name = "dataFormat" class="changeFormatRadio" value="FG" >Full Genomes format<BR>
+</fieldset>
+</td><td style="vertical-align:top">
+<fieldset class='inline'>
+<legend>Tree version</legend>
+<input type="radio" name = "treeType" class="changeTreeRadio" value = "ISOGG" > ISOGG tree</input><br>
+<input type="radio" name = "treeType" class="changeTreeRadio" value = "MorleyTree"  checked>Experimental tree</input>
+</fieldset>
+</td></tr></table>
+
+
+
+<input type="text" style="display:none;" name ="xanthopsar" id="bird" >
+
+<div class='g-recaptcha' data-sitekey='6LfRlRsTAAAAACMh1JYKGkajPpmhesO1QqPsxV7V' data-callback='captchaPass' data-expired-callback='captchaExpire'></div><input type="checkbox" name="get-consent-check" id="get-consent-check" ><label>I consent to the processing and collection of my data, as described in the <a target="_blank" href="https://ytree.morleydna.com/privacy-policy">privacy policy</a></label><br>
+<input type='submit' value='Predict' >&nbsp;
+<input type="button" id="resetButton" value="Reset" >
+</form>
+<!--<hr width = "60%">-->
+<center>
+<div style="width:60%;">
+<div style="background:#0066cc;height:3px;";"></div><div style="background:#ffcc00;height:3px;"></div></div>
+</center>
+
+<h2>News</h2>
+<h3>21 March 2020</h3>
+A user in Spain reported reCAPTCHA issues. The problem was that Google changed the behaviour of its reCAPTCHA validation server, without issuing a corresponding change to its reCAPTCHA library. I've implemented a proposed workaround, while we wait for official guidance from Google. 
+<h3>25 April 2018</h3>
+Apologies for the unplanned downtime. It always seems to happen, for reasons beyond my control, while I am travelling or celebrating my birthday. Things should now be operational again.
+<h3>5 January 2018</h3>
+There will be some webserver maintenance this week. I don't expect lengthy disruptions. If there are, I'll give maintenance status updates via <a href="https://twitter.com/morleydna" target="_blank">@MorleyDNA</a>.
+<h3>1 October 2017</h3>
+There were some website outages over the last week. It was an issue with my web host. I'll be working this month to move this service to a different server.
+
+
+<h3>June 2017</h3>
+Is the "I'm not a robot" button not working for you? Try enabling third-party cookies. This seems to be a <a href="https://github.com/google/recaptcha/issues/155" target="_blank">recent development</a>.
+
+<h3>17 April 2014</h3>
+
+MorleyDNA.com's web hosting plan is being upgraded. Consequently, there may be service disruptions over the next 72 hours.
+
+<h3>7 February 2014</h3>
+
+<a href="https://ytree.morleydna.com/experimental-phylogeny">Latest update.</a>
+
+<h3>8 November 2013</h3>
+
+An <a href="http://ytree.morleydna.com/experimental-phylogeny">update</a>, in advance of the 2013 Family Tree DNA Genetic Genealogy conference. Over 2200 Geno 2.0 kits and over 7300 non-Geno kits.
+
+<p> When linking to these phylogenies, please link to <a href="https://ytree.morleydna.com/experimental-phylogeny">https://ytree.morleydna.com/experimental-phylogeny</a> (a list of all versions), rather than any particular PDF document. This way, people will not inadvertently use older versions.
+
+<h3>7 September 2013</h3>
+Another new version of the <a href="https://ytree.morleydna.com/experimental-phylogeny">experimental phylogeny</a> has been released. In addition to the almost 2000 Geno 2.0 kits (coloured blue), this report also incorporates several thousand non-Geno kits (coloured magenta). For the same reasons as below, the classifier still uses the 26 July 2013 phylogeny.
+
+
+<h3>8 August 2013</h3>
+<div width="100%" style="background-color:#FFFFE0;">
+A new version of the <a href="https://ytree.morleydna.com/experimental-phylogeny">experimental phylogeny</a> was released today. It features over 1850 Geno kits. It is the first version of this report to fill in gaps using select non-Geno data. Some of these non-Geno SNPs will be private. Others will turn out to be further upstream, only  for the moment appearing to be private because they haven't been widely tested yet.   
+<p>
+The new version also features corrections to some of the discrepancies noted in the 26 July version.
+<p>
+I have made some changes to the data structure underlying my experimental phylogeny. Until I make the corresponding changes to my predictor, its experimental predictions will continue to be based on the 26 July 2013 phylogeny.
+<p>
+As a demonstration of this software's versatility, the same algorithm used to process the Geno data was used to generate a phylogeny from the two-sample Full Genomes demo data.
+<p>
+By request, this and future versions of my phylogeny will be accompanied by a <a href="https://ytree.morleydna.com/experimental-phylogeny">CSV summary file</a> giving kit counts and SNP counts for each node.
+<p>
+Finally, at the end of last month I produced an <a href="https://ytree.morleydna.com/experimental-phylogeny">automated report showing discrepancies and gaps</a> in the ISOGG tree and SNP database.
+</div>
+<h3>17 July 2013</h3>
+Thank you for your interest in this project!
+<p>
+This project was launched on 16 July 2013 and since then it has gone very mildly viral. I'd like to temper some of the excitement directed towards the first version of my experimental Y-tree. Please don't overlook the "experimental" nature of this tree. 
+<p>
+This project should be regarded as informative rather than authoritative. As I wrote in my announcement, it's not perfect, but it's a start. 
+<p>
+Chris Morley
+
+<a name = "Formats">
+<h2> Data Formats</h2>
+Two main formats are supported:
+<ul>
+<li>FTDNA format.
+<p> Example:
+<pre style="background-color:#F0F0F0;">
+M343+, L21+, DF13+, DF23+, M222-
+</pre>
+</li>
+<small>For this option, the calls must be comma-separated. This is the format <a href = "http://www.familytreedna.com?ref=https://ytree.morleydna.com" target = '_blank'>Family Tree DNA</a> uses in its projects' Y-SNP reports. It has been pointed out that the SNP list on the myFTDNA &#34;Y-DNA Haplotree &amp; SNPs&#34; report is <i>not</i> comma-separated. <!--This predictor currently gives an error message if your data lacks commas. You'll have to add the commas manually. We're testing a workaround.--> We're experimenting with a workaround to accommodate this variant format. You'll get more comprehensive results if you join a public FTDNA project and use the data from that project's Y-SNP report (because the myFTDNA report only lists SNPs that FTDNA offers &agrave; la carte).</small>
+<li>Full Genomes demo format.
+<p>The three-line header is optional. Partial headers may cause issues. Multi-named SNPs are accepted. Example:
+<pre style="background-color:#F0F0F0;">
+PF6242  /  M343,+
+S145  /  M529  /  L21,+
+CTS241  /  S521  /  DF13,+
+S193  /  DF23,+
+USP9Y+3636  /  PAGE84  /  M222,-
+</pre>
+<small>Note: This is the format of <a href="http://www.fullgenomes.com?ref=https://ytree.morleydna.com" target="_blank">Full Genomes Corp.</a>'s demo datasets. </small> 
+</li>
+</ul>
+<a name = "References">
+
+<h2>Documentation and discussion</h2>
+Forthcoming. For now, see <a href="https://ytree.morleydna.com/ExperimentalGenoPhylogeny.pdf" id="downloadPhylo" target="_blank">here</a> for some details on notation.
+<p>
+<a href = "faq"> Frequently Asked Questions</a>
+<h2>Tree references</h2> 
+ISOGG tree:
+<ul><li>International Society of Genetic Genealogy (2013). <i>Y-DNA Haplogroup Tree 2013, Version: 8.64</i>, Date: 19 July 2013, <a href="http://www.isogg.org/tree/" target="_blank">http://www.isogg.org/tree/</a> [Date of access: 25 July 2013].</li>
+</ul>
+Experimental tree [approx. 2.8 MB PDF]:
+<ul><li>Chris Morley (2013). <i>An experimental computer-generated Y-chromosomal phylogeny, leveraging public Geno
+2.0 results and the current ISOGG tree</i>, <B>8 November 2013</B>, <a href="https://ytree.morleydna.com/experimental-phylogeny" id="downloadPhylo2" target="_blank">https://ytree.morleydna.com/ExperimentalGenoPhylogeny.pdf</a> [Date of access: 16 February 2023].
+<p>
+<i>The 8 November 2013 version of this phylogeny has attributes not yet supported by the classifier. So the classifier still uses the 26 July 2013 version of the phylogeny as its experimental tree.</i>
+<p>See <a href="https://ytree.morleydna.com/experimental-phylogeny">previous versions</a> of this phylogeny, and other related documents.
+</li>
+</ul>	
+
+<h2>Feedback</h2>
+Please send all questions, bugs, comments and suggestions to Chris Morley, via email or through <a href="https://www.MorleyDNA.com/contact" target="_blank">this form</a>.
+</main>
+<!--<hr>-->
+<div style="background:#0066cc;height:3px;";"></div><div style="background:#ffcc00;height:3px;"></div><div width="100%" style="background-color:#FFFFE0;">
+<a name = "License"></a>
+<a name = "Licence"></a>
+<small>The MorleyDNA.com Y-SNP Subclade Predictor and experimental Y phylogeny are copyright &copy; 2013-2023 Chris Morley. All rights reserved. Licensed for non-commercial use under the Creative Commons <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">Attribution-NonCommercial-NoDerivs 3.0 Unported</a> license, with the additional condition that the underlying experimental Y phylogeny cannot be used in other prediction/classification software without the author's prior permission. Genetic genealogical consultants, businesses and others looking to use the predictor and/or experimental phylogeny as part of a for-profit activity must <a href="http://www.MorleyDNA.com/contact" target="_blank">contact the author</a> to discuss licensing. Visitors relying on any information do so at their own risk. Use of this service is subject to this <a target="_blank" href="privacy-policy">privacy policy</a></small>
+
+
+<script type="text/javascript"  nonce='562ab4f299418947095401cfeabc3fcf84f56550523d50b1e04dcfa1f1d51e570aadf7203d503a84c63e89fb49f437f10c36142ff5d22ea92888ac3cb4080cb7' >
+  var _paq = _paq || [];
+  _paq.push(["setDoNotTrack", true]);
+//web browser's accept-language setting -- curious what proportion of users prefer something other than English
+_paq.push(['setCustomDimension', 1, 'ru-RU,ru q0.9,en-US q0.8,en q0.7']); 
+
+//how many CPU cores the device has
+_paq.push(['setCustomDimension', 2, navigator.hardwareConcurrency || "n/a"]); 
+
+ _paq.push(['enableLinkTracking', true]);
+  _paq.push(['trackPageView']);
+ 
+
+
+  (function() {
+    var u="//seneschal.morleydna.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 3]);
+    
+    //_paq.push(['addTracker', '//piwik.uat.morleyofportlaw.com/piwik.php', 4]);
+
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><img src="//seneschal.morleydna.com/piwik/piwik.php?idsite=3&rec=1&url=/&action_name=noscript&bots=1&urlref=null&rand=150107733" style="border:0;" alt="" /></noscript>
+
+
+</div>
+</div>
+<script  nonce='562ab4f299418947095401cfeabc3fcf84f56550523d50b1e04dcfa1f1d51e570aadf7203d503a84c63e89fb49f437f10c36142ff5d22ea92888ac3cb4080cb7' >
+
+    document.getElementById("brandNewTool").addEventListener('click', function() {_paq.push(['trackEvent', 'newTool', 'click'])});
+
+//http://stackoverflow.com/questions/7410949/javascript-document-getelementsbyclassname-compatibility-with-ie
+function getElementsByClassName(node, classname) {
+    var a = [];
+    var re = new RegExp('(^| )'+classname+'( |$)');
+    var els = node.getElementsByTagName("*");
+    for(var i=0,j=els.length; i<j; i++)
+        if(re.test(els[i].className))a.push(els[i]);
+    return a;
+}//return getElementsByClassName
+
+//var formatRadioButtons = document.getElementsByClassName("changeFormatRadio");
+var formatRadioButtons = getElementsByClassName(document.body, "changeFormatRadio");
+for (var i = 0; i < formatRadioButtons.length; i++) {formatRadioButtons[i].addEventListener('click', changeFormat);}
+
+//var treeRadioButtons = document.getElementsByClassName("changeTreeRadio");
+var treeRadioButtons = getElementsByClassName(document.body, "changeTreeRadio");
+for (var i = 0; i < treeRadioButtons.length; i++) {treeRadioButtons[i].addEventListener('click', changeFormat);}
+
+document.getElementById("get-consent-check").addEventListener('click', function() {_paq.push(['trackEvent', 'consentChanged', 'click']);consentChanged();});
+
+
+document.getElementById("resetButton").addEventListener('click', function() {document.getElementById('rawData').value='';_paq.push(['trackEvent', 'inputReset', 'click']);});
+
+
+document.getElementById("downloadPhylo").addEventListener('click', function() {_paq.push(['_trackEvent', 'LogDownload', 'PDFDownload', 'Phylogeny']);});
+
+document.getElementById("downloadPhylo2").addEventListener('click', function() {_paq.push(['_trackEvent', 'LogDownload', 'PDFDownload', 'Phylogeny']);});
+
+
+document.getElementById("dataEntryForm").addEventListener('submit', submitClick);
+
+document.getElementById("bird").addEventListener('change', changeBird);
+
+</script>
+
+</body>
+</html>
